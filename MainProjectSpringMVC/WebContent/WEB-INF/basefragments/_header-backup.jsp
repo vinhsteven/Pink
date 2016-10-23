@@ -1,22 +1,18 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
- 
- <script>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+<script>
 	$(function(){
 		 $("#table").DataTable();
 	})	
 </script>
 
-<div class="header-container">
- 
-    <div class="site-name">E-Bazaar</div>
- 
-    <div class="header-bar">
-    	<div style="position:top; margin-top: 4px; margin-bottom: 4px;">
+<div class="navbar-header" style="min-width:25%">
+	<a class="navbar-brand" href=""><img class="logo" src="static/images/ebazaar-logo.jpg" /></a>
+</div>
+
+<div  style="min-width:75%;float: right;">
+	<div style="position:top; margin-top: 4px; margin-bottom: 4px;">
 		<ul class="nav navbar-top-links">
-		    <!-- Home -->
-		    <a href="">Home</a> 
 			<!-- Products -->
 			<li class="dropdown">
 				<a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-wrench fa-fw"></i>Products <i class="fa fa-caret-down"></i>
@@ -57,7 +53,28 @@
             </c:if>			
 		</ul>
 	</div>
-        <div class="userLogin">
+	<div style="position:bottom;">
+		<div class="arrange" style="float:left">
+		    <div class="js-searchbar-typeahead-input searchbar-typeahead arrange-fill searchbar-typeahead-input empty">
+		      <span class="twitter-typeahead typeahead" style="position: relative; display: inline-block; direction: ltr;">
+		        <input id="search" style="padding-left:10px;" class="js-searchbar-input js-header-instant-placeholder searchbar-input tt-input" type="text" name="query" placeholder="Search" value="" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" accesskey="s" role="combobox" aria-haspopup="true" dir="auto" style="position: relative; vertical-align: top;">
+		      	<span class="tt-dropdown-menu" style="position: absolute; top: 100%; left: 0px; z-index: 100; display: none; right: auto;"></span>
+		      </span>
+		      <button class="js-searchbar-clear searchbar-clear btn-link absolute-center-v" type="reset">
+		        <i class="wmicon wmicon-remove"></i>
+		        <span class="visuallyhidden">Clear search field</span>
+		      </button>
+		    </div>
+		
+		    <div class="arrange-fit">
+		      <button type="submit" class="searchbar-submit js-searchbar-submit" style="margin-top: 1px;">
+		        
+		        <i class="wmicon wmicon-search glyphicon glyphicon-search"></i><span class="visuallyhidden">Search</span>
+		      </button>
+		    </div>
+		  </div>
+		    
+		<div class="userLogin">
 			<c:choose>
 				<c:when test="${LoggedIn.loggedIn}">
 					Welcome ${LoggedIn.loginId} (<a href="logout">Sign Out</a>)
@@ -67,5 +84,6 @@
 				</c:otherwise>
 			</c:choose>
 		</div>
-    </div>
+	</div>
+			
 </div>
