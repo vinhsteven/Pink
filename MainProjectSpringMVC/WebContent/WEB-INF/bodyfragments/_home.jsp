@@ -1,14 +1,9 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
     <!-- Page Content -->
     <div class="container-fluid">
-
         <div class="row-fluid">
- 
-
             <div class="col-md-12">
-
                 <div class="row carousel-holder">
-
                     <div class="col-md-12">
                         <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
                             <ol class="carousel-indicators">
@@ -42,9 +37,8 @@
 
                 </div>
 
-				<p class="hot">Featured products <img src="static/images/hot.gif" /></p>
+				<p class="hot">Featured products<img src="static/images/hot.gif" /></p>
                 <div class="row">
-
                     <c:forEach items="${products}" var="product">
 					    <div class="col-sm-2 col-lg-2 col-md-2">
 	                        <div class="thumbnail">
@@ -110,10 +104,7 @@
 	                    </div>						
 					</c:forEach>                
                 </div>
-
             </div>
-
         </div>
-
     </div>
     <!-- /.container -->

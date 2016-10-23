@@ -41,7 +41,6 @@ public class BrowseSelectUIControl {
 	/** do Online purchase */
 	@RequestMapping("/")
 	public String index(HttpServletRequest request) {
-		
 		//Catalog
 		List<CatalogPres> catalogs = populateCatalog(request.getSession());
 		browseSelectData.setCatalogs(catalogs);
@@ -267,6 +266,13 @@ public class BrowseSelectUIControl {
 		return cartDataItems;
 	}
 	
+	//22-10-2016 test new layout Tam-Le start
+	/** test new layout */
+	@RequestMapping("/bigshot")
+	public String bigShot(HttpServletRequest request) {		
+		return "indexnew";
+	}
+	//22-10-2016 test new layout Tam-Le end
 	
 
 
