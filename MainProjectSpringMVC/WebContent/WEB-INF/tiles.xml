@@ -8,19 +8,19 @@
     <definition name="base.definition" 
                 template="/WEB-INF/layouts/base_sidebar.jsp">  
         <put-attribute name="title" value="" />  
-        <put-attribute name="header" value="/WEB-INF/basefragments/_header.jsp" />  
+        <put-attribute name="header" value="/WEB-INF/basefragments/_header.jsp" />
         <put-attribute name="sidebar" value="/WEB-INF/basefragments/_sidebar.jsp" />
         <put-attribute name="body" value="" />  
-        <put-attribute name="footer" value="/WEB-INF/basefragments/_footer.jsp" />  
+        <put-attribute name="footer" value="/WEB-INF/basefragments/_footer.jsp" />
     </definition>  
     
     <!-- Base Define with no side bar-->
     <definition name="base_nosidebar.definition" 
                 template="/WEB-INF/layouts/base_nosidebar.jsp">  
-        <put-attribute name="title" value="" />  
+        <put-attribute name="title" value="" />
         <put-attribute name="header" value="/WEB-INF/basefragments/_header.jsp" />
         <put-attribute name="body" value="" />  
-        <put-attribute name="footer" value="/WEB-INF/basefragments/_footer.jsp" />  
+        <put-attribute name="footer" value="/WEB-INF/basefragments/_footer.jsp" />
     </definition>  
  
     <!-- Home Page -->

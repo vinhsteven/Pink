@@ -8,6 +8,50 @@
 	})	
 </script>
 
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" />
+<link rel="stylesheet" type="text/css" href="static/style.css" />
+<script type="text/javascript" src="static/js/boxOver.js"></script>
+</head>
+
+<div id="main_container">
+	<div id="main_content">
+		<div id="menu_tab">
+
+    	  <div class="left_menu_corner"></div>
+
+	      <ul class="menu">
+
+    	    <li><a href="" class="nav1"> Home</a></li>
+
+	        <li class="divider"></li>
+
+        	<li><a href="" class="nav2">Products</a></li>
+
+    	    <li class="divider"></li>
+
+	        <li><a href="" class="nav4">My account</a></li>
+
+        	<li class="divider"></li>
+        
+    	    <div class="user_login">
+				<c:choose>
+					<c:when test="${LoggedIn.loggedIn}">
+						Welcome ${LoggedIn.loginId} (<a href="logout">Sign Out</a>)
+					</c:when>
+					<c:otherwise>
+						<a href="login">Hello, Sign In</a>
+					</c:otherwise>
+				</c:choose>
+			</div>
+	        </ul>
+      		<div class="right_menu_corner"></div>
+		</div>
+	</div>
+</div>
+
+    
+<!--
 <div class="header-container">
  
     <div class="site-name">E-Bazaar</div>
@@ -15,9 +59,8 @@
     <div class="header-bar">
     	<div style="position:top; margin-top: 4px; margin-bottom: 4px;">
 		<ul class="nav navbar-top-links">
-		    <!-- Home -->
 		    <a href="">Home</a> 
-			<!-- Products -->
+		    
 			<li class="dropdown">
 				<a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-wrench fa-fw"></i>Products <i class="fa fa-caret-down"></i>
 				</a>
@@ -29,7 +72,7 @@
 	                 </c:forEach>
 				</ul>
 			</li>
-			<!-- Customer -->
+
 			<li class="dropdown">
 				<a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-user fa-fw"></i>Customer <i class="fa fa-caret-down"></i>
 				</a>
@@ -43,7 +86,7 @@
 					</c:choose>
 				</ul>
 			</li>
-			<!-- Administrator -->
+
             <c:if test="${LoggedIn.admin}">
 			<li class="dropdown">
 				<a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-gear fa-fw"></i>Administrator <i class="fa fa-caret-down"></i>
@@ -69,3 +112,4 @@
 		</div>
     </div>
 </div>
+-->
