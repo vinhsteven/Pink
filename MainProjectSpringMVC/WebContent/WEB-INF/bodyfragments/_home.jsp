@@ -98,125 +98,27 @@
 
       <div class="center_title_bar">Latest Products</div>
 
-      <div class="prod_box">
+	<c:forEach items="${products}" var="product">
+    	<div class="prod_box">
 
-        <div class="top_prod_box"></div>
+        	<div class="top_prod_box"></div>
 
-        <div class="center_prod_box">
+	        <div class="center_prod_box">
+             
+	            <div class="product_img">
+	            	<a href="product/${product.id}"><img width="auto" height="94px" src="static/images/${product.catalogid}${product.id}.jpg" alt="" border="0"/></a>
+	            </div>
+	            <div class=product_title><a href="product/${product.id}">${product.name}</a></div>
+	            <div class="prod_price"><span class="price">$${product.unitPrice}</span></div>
+			
+        	</div>
 
-          <div class="product_title"><a href="details.html">Motorola 156 MX-VL</a></div>
-
-          <div class="product_img"><a href="details.html"><img src="static/images/laptop.gif" alt="" border="0" /></a></div>
-
-          <div class="prod_price"><span class="reduce">350$</span> <span class="price">270$</span></div>
-
-        </div>
-
-        <div class="bottom_prod_box"></div>
-
-        <div class="prod_details_tab"> <a href="http://all-free-download.com/free-website-templates/" title="header=[Add to cart] body=[&nbsp;] fade=[on]"><img src="static/images/cart.gif" alt="" border="0" class="left_bt" /></a> <a href="http://all-free-download.com/free-website-templates/" title="header=[Specials] body=[&nbsp;] fade=[on]"><img src="static/images/favs.gif" alt="" border="0" class="left_bt" /></a> <a href="http://all-free-download.com/free-website-templates/" title="header=[Gifts] body=[&nbsp;] fade=[on]"><img src="static/images/favorites.gif" alt="" border="0" class="left_bt" /></a> <a href="details.html" class="prod_details">details</a> </div>
-
-      </div>
-
-      <div class="prod_box">
-
-        <div class="top_prod_box"></div>
-
-        <div class="center_prod_box">
-
-          <div class="product_title"><a href="details.html">Iphone Apple</a></div>
-
-          <div class="product_img"><a href="details.html"><img src="static/images/p4.gif" alt="" border="0" /></a></div>
-
-          <div class="prod_price"><span class="price">270$</span></div>
-
-        </div>
-
-        <div class="bottom_prod_box"></div>
+	        <div class="bottom_prod_box"></div>
 
         <div class="prod_details_tab"> <a href="http://all-free-download.com/free-website-templates/" title="header=[Add to cart] body=[&nbsp;] fade=[on]"><img src="static/images/cart.gif" alt="" border="0" class="left_bt" /></a> <a href="http://all-free-download.com/free-website-templates/" title="header=[Specials] body=[&nbsp;] fade=[on]"><img src="static/images/favs.gif" alt="" border="0" class="left_bt" /></a> <a href="http://all-free-download.com/free-website-templates/" title="header=[Gifts] body=[&nbsp;] fade=[on]"><img src="static/images/favorites.gif" alt="" border="0" class="left_bt" /></a> <a href="details.html" class="prod_details">details</a> </div>
 
       </div>
-
-      <div class="prod_box">
-
-        <div class="top_prod_box"></div>
-
-        <div class="center_prod_box">
-
-          <div class="product_title"><a href="details.html">Samsung Webcam</a></div>
-
-          <div class="product_img"><a href="details.html"><img src="static/images/p5.gif" alt="" border="0" /></a></div>
-
-          <div class="prod_price"><span class="reduce">350$</span> <span class="price">270$</span></div>
-
-        </div>
-
-        <div class="bottom_prod_box"></div>
-
-        <div class="prod_details_tab"> <a href="http://all-free-download.com/free-website-templates/" title="header=[Add to cart] body=[&nbsp;] fade=[on]"><img src="static/images/cart.gif" alt="" border="0" class="left_bt" /></a> <a href="http://all-free-download.com/free-website-templates/" title="header=[Specials] body=[&nbsp;] fade=[on]"><img src="static/images/favs.gif" alt="" border="0" class="left_bt" /></a> <a href="http://all-free-download.com/free-website-templates/" title="header=[Gifts] body=[&nbsp;] fade=[on]"><img src="static/images/favorites.gif" alt="" border="0" class="left_bt" /></a> <a href="details.html" class="prod_details">details</a> </div>
-
-      </div>
-
-      <div class="prod_box">
-
-        <div class="top_prod_box"></div>
-
-        <div class="center_prod_box">
-
-          <div class="product_title"><a href="details.html">Motorola 156 MX-VL</a></div>
-
-          <div class="product_img"><a href="details.html"><img src="static/images/laptop.gif" alt="" border="0" /></a></div>
-
-          <div class="prod_price"><span class="reduce">350$</span> <span class="price">270$</span></div>
-
-        </div>
-
-        <div class="bottom_prod_box"></div>
-
-        <div class="prod_details_tab"> <a href="http://all-free-download.com/free-website-templates/" title="header=[Add to cart] body=[&nbsp;] fade=[on]"><img src="static/images/cart.gif" alt="" border="0" class="left_bt" /></a> <a href="http://all-free-download.com/free-website-templates/" title="header=[Specials] body=[&nbsp;] fade=[on]"><img src="static/images/favs.gif" alt="" border="0" class="left_bt" /></a> <a href="http://all-free-download.com/free-website-templates/" title="header=[Gifts] body=[&nbsp;] fade=[on]"><img src="static/images/favorites.gif" alt="" border="0" class="left_bt" /></a> <a href="details.html" class="prod_details">details</a> </div>
-
-      </div>
-
-      <div class="prod_box">
-
-        <div class="top_prod_box"></div>
-
-        <div class="center_prod_box">
-
-          <div class="product_title"><a href="details.html">Iphone Apple</a></div>
-
-          <div class="product_img"><a href="details.html"><img src="static/images/p4.gif" alt="" border="0" /></a></div>
-
-          <div class="prod_price"><span class="price">270$</span></div>
-
-        </div>
-
-        <div class="bottom_prod_box"></div>
-
-        <div class="prod_details_tab"> <a href="http://all-free-download.com/free-website-templates/" title="header=[Add to cart] body=[&nbsp;] fade=[on]"><img src="images/cart.gif" alt="" border="0" class="left_bt" /></a> <a href="http://all-free-download.com/free-website-templates/" title="header=[Specials] body=[&nbsp;] fade=[on]"><img src="static/images/favs.gif" alt="" border="0" class="left_bt" /></a> <a href="http://all-free-download.com/free-website-templates/" title="header=[Gifts] body=[&nbsp;] fade=[on]"><img src="static/images/favorites.gif" alt="" border="0" class="left_bt" /></a> <a href="details.html" class="prod_details">details</a> </div>
-
-      </div>
-
-      <div class="prod_box">
-
-        <div class="top_prod_box"></div>
-
-        <div class="center_prod_box">
-
-          <div class="product_title"><a href="details.html">Samsung Webcam</a></div>
-
-          <div class="product_img"><a href="details.html"><img src="static/images/p5.gif" alt="" border="0" /></a></div>
-
-          <div class="prod_price"><span class="reduce">350$</span> <span class="price">270$</span></div>
-
-        </div>
-
-        <div class="bottom_prod_box"></div>
-
-        <div class="prod_details_tab"> <a href="http://all-free-download.com/free-website-templates/" title="header=[Add to cart] body=[&nbsp;] fade=[on]"><img src="static/images/cart.gif" alt="" border="0" class="left_bt" /></a> <a href="http://all-free-download.com/free-website-templates/" title="header=[Specials] body=[&nbsp;] fade=[on]"><img src="static/images/favs.gif" alt="" border="0" class="left_bt" /></a> <a href="http://all-free-download.com/free-website-templates/" title="header=[Gifts] body=[&nbsp;] fade=[on]"><img src="static/images/favorites.gif" alt="" border="0" class="left_bt" /></a> <a href="details.html" class="prod_details">details</a> </div>
-
-      </div>
+    </c:forEach>  
 
       <div class="center_title_bar">Recommended Products</div>
 
@@ -292,9 +194,9 @@
 
         <div class="cart_details"> 3 items <br />
 
-          <span class="border_cart"></span> Total: <span class="price">350$</span> </div>
+        <span class="border_cart"></span> Total: <span class="price">350$</span> </div>
 
-        <div class="cart_icon"><a href="http://all-free-download.com/free-website-templates/" title="header=[Checkout] body=[&nbsp;] fade=[on]"><img src="static/images/shoppingcart.png" alt="" width="48" height="48" border="0" /></a></div>
+        <div class="cart_icon"><a href="shoppingcart" title="header=[Checkout] body=[&nbsp;] fade=[on]"><img src="static/images/shoppingcart.png" alt="" width="48" height="48" border="0" /></a></div>
 
       </div>
 
@@ -324,7 +226,7 @@
 
     <div class="left_footer"> <img src="static/images/footer_logo.png" alt="" width="170" height="49"/> </div>
 
-    <div class="center_footer"> Template name. All Rights Reserved 2008<br />
+    <div class="center_footer"> Pink Group. All Rights Reserved 2008<br />
 
       <a href="http://csscreme.com"><img src="static/images/csscreme.jpg" alt="csscreme" border="0" /></a><br />
 

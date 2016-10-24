@@ -57,7 +57,6 @@ public class BrowseSelectUIControl {
 			e.printStackTrace();
 		}		
 		
-		
 		return "home";
 	}
 	 
