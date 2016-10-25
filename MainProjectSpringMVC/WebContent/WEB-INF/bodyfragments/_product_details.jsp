@@ -68,7 +68,7 @@ $(document).ready(function() {
 						</button> 			
 						 
 						<a href="javascript:history.back()" class="btn btn-default" style="margin-left:50px;">
-							<span class="glyphicon-hand-left glyphicon"></span> back
+							<span class="glyphicon-hand-left glyphicon"></span> Back
 						</a>
 		
 					</p>

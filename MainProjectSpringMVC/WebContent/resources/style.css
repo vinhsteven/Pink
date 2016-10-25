@@ -635,3 +635,9 @@ img.product_details{
 	float:left;
 	margin:20px;
 }
+
+.small-thumbnail img{
+	padding: 0 10px;
+	width:60px;
+	height:60px;
+}

@@ -6,7 +6,7 @@
 <br>
 <br>
 <div class="row">
-<div class="col-md-offset-1 ">  
+<div class="col-md-offset-1">  
 	<h3>Terms and Conditions</h3>
 	Any Items purchased from this site adhere to the terms and conditions
 	depicted in this document. You will need to accept the Terms and
