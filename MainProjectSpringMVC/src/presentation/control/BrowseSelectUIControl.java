@@ -45,13 +45,21 @@ public class BrowseSelectUIControl {
 		List<CatalogPres> catalogs = populateCatalog(request.getSession());
 		browseSelectData.setCatalogs(catalogs);
 		//Hot products
-		List<ProductPres> products = null;
+		List<List<ProductPres>> sumProd = new ArrayList<List<ProductPres>>();
+		List<ProductPres> latestProducts = null;
+		List<ProductPres> recommendedProducts = null;
 		try {
-			products = browseSelectData.getProductList(catalogs.get(0));
+			latestProducts = browseSelectData.getProductList(catalogs.get(0));
 			browseSelectData.setSelectedCatalog(catalogs.get(0));
-			browseSelectData.addProductsToMap(catalogs.get(0), products);
+			browseSelectData.addProductsToMap(catalogs.get(0), latestProducts);
 			
-			request.getSession().setAttribute("products", products);		
+			recommendedProducts = browseSelectData.getProductList(catalogs.get(1));
+			//add recommended products list and products to sumProd
+			sumProd.add(latestProducts);
+			sumProd.add(recommendedProducts);
+			
+//			request.getSession().setAttribute("products", products);
+			request.getSession().setAttribute("products", sumProd);
 			
 		} catch (BackendException e) {
 			e.printStackTrace();

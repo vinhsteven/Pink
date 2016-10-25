@@ -77,18 +77,18 @@
       </ul>
 
       <div class="title_box">Special Products</div>
-
+		
       <div class="border_box">
+		<c:forEach items="${products[0]}" var="product" end="0">
+        	<div class="product_title"><a href="details.html">${product.name}</a></div>
 
-        <div class="product_title"><a href="details.html">Motorola 156 MX-VL</a></div>
+    	    <div class="product_img"><a href="details.html"><img width="auto" height="94px" src="static/images/${product.catalogid}${product.id}.jpg" alt="" border="0" /></a></div>
 
-        <div class="product_img"><a href="details.html"><img src="static/images/laptop.png" alt="" border="0" /></a></div>
-
-        <div class="prod_price"><span class="reduce">350$</span> <span class="price">270$</span></div>
-
+	        <div class="prod_price"><span class="reduce">$${product.unitPrice+product.unitPrice*0.2}</span> <span class="price">$${product.unitPrice}</span></div>
+		</c:forEach>
       </div>
 
-      <div class="banner_adds"> <a href="http://all-free-download.com/free-website-templates/"><img src="static/images/bann2.jpg" alt="" border="0" /></a> </div>
+      <div class="banner_adds"> <a href=""><img src="static/images/bann2.jpg" alt="" border="0" /></a> </div>
 
     </div>
 
@@ -98,7 +98,7 @@
 
       <div class="center_title_bar">Latest Products</div>
 
-	<c:forEach items="${products}" var="product">
+	<c:forEach items="${products[0]}" var="product">
     	<div class="prod_box">
 
         	<div class="top_prod_box"></div>
@@ -115,72 +115,39 @@
 
 	        <div class="bottom_prod_box"></div>
 
-        <div class="prod_details_tab"> <a href="http://all-free-download.com/free-website-templates/" title="header=[Add to cart] body=[&nbsp;] fade=[on]"><img src="static/images/cart.gif" alt="" border="0" class="left_bt" /></a> <a href="http://all-free-download.com/free-website-templates/" title="header=[Specials] body=[&nbsp;] fade=[on]"><img src="static/images/favs.gif" alt="" border="0" class="left_bt" /></a> <a href="http://all-free-download.com/free-website-templates/" title="header=[Gifts] body=[&nbsp;] fade=[on]"><img src="static/images/favorites.gif" alt="" border="0" class="left_bt" /></a> <a href="details.html" class="prod_details">details</a> </div>
-
+        <div class="prod_details_tab">
+         <a href="" title="header=[Specials] body=[&nbsp;] fade=[on]"><img src="static/images/favs.gif" alt="" border="0" class="left_bt" /></a> 
+         <a href="" title="header=[Gifts] body=[&nbsp;] fade=[on]"><img src="static/images/favorites.gif" alt="" border="0" class="left_bt" /></a> 
+         <a href="product/${product.id}" class="prod_details">details</a> </div>
       </div>
     </c:forEach>  
 
       <div class="center_title_bar">Recommended Products</div>
 
-      <div class="prod_box">
+      <c:forEach items="${products[1]}" var="product">
+    	<div class="prod_box">
 
-        <div class="top_prod_box"></div>
+        	<div class="top_prod_box"></div>
 
-        <div class="center_prod_box">
+	        <div class="center_prod_box">
+             
+	            <div class="product_img">
+	            	<a href="product/${product.id}"><img width="auto" height="94px" src="static/images/${product.catalogid}${product.id}.jpg" alt="" border="0"/></a>
+	            </div>
+	            <div class=product_title><a href="product/${product.id}">${product.name}</a></div>
+	            <div class="prod_price"><span class="price">$${product.unitPrice}</span></div>
+			
+        	</div>
 
-          <div class="product_title"><a href="details.html">Motorola 156 MX-VL</a></div>
+	        <div class="bottom_prod_box"></div>
 
-          <div class="product_img"><a href="details.html"><img src="static/images/laptop.gif" alt="" border="0" /></a></div>
-
-          <div class="prod_price"><span class="reduce">350$</span> <span class="price">270$</span></div>
-
-        </div>
-
-        <div class="bottom_prod_box"></div>
-
-        <div class="prod_details_tab"> <a href="http://all-free-download.com/free-website-templates/" title="header=[Add to cart] body=[&nbsp;] fade=[on]"><img src="static/images/cart.gif" alt="" border="0" class="left_bt" /></a> <a href="http://all-free-download.com/free-website-templates/" title="header=[Specials] body=[&nbsp;] fade=[on]"><img src="static/images/favs.gif" alt="" border="0" class="left_bt" /></a> <a href="http://all-free-download.com/free-website-templates/" title="header=[Gifts] body=[&nbsp;] fade=[on]"><img src="static/images/favorites.gif" alt="" border="0" class="left_bt" /></a> <a href="details.html" class="prod_details">details</a> </div>
-
-      </div>
-
-      <div class="prod_box">
-
-        <div class="top_prod_box"></div>
-
-        <div class="center_prod_box">
-
-          <div class="product_title"><a href="details.html">Iphone Apple</a></div>
-
-          <div class="product_img"><a href="details.html"><img src="static/images/p4.gif" alt="" border="0" /></a></div>
-
-          <div class="prod_price"><span class="price">270$</span></div>
-
-        </div>
-
-        <div class="bottom_prod_box"></div>
-
-        <div class="prod_details_tab"> <a href="http://all-free-download.com/free-website-templates/" title="header=[Add to cart] body=[&nbsp;] fade=[on]"><img src="static/images/cart.gif" alt="" border="0" class="left_bt" /></a> <a href="http://all-free-download.com/free-website-templates/" title="header=[Specials] body=[&nbsp;] fade=[on]"><img src="static/images/favs.gif" alt="" border="0" class="left_bt" /></a> <a href="http://all-free-download.com/free-website-templates/" title="header=[Gifts] body=[&nbsp;] fade=[on]"><img src="static/images/favorites.gif" alt="" border="0" class="left_bt" /></a> <a href="details.html" class="prod_details">details</a> </div>
+        <div class="prod_details_tab">
+         <a href="" title="header=[Specials] body=[&nbsp;] fade=[on]"><img src="static/images/favs.gif" alt="" border="0" class="left_bt" /></a> 
+         <a href="" title="header=[Gifts] body=[&nbsp;] fade=[on]"><img src="static/images/favorites.gif" alt="" border="0" class="left_bt" /></a> 
+         <a href="product/${product.id}" class="prod_details">details</a> </div>
 
       </div>
-
-      <div class="prod_box">
-
-        <div class="top_prod_box"></div>
-
-        <div class="center_prod_box">
-
-          <div class="product_title"><a href="details.html">Samsung Webcam</a></div>
-
-          <div class="product_img"><a href="details.html"><img src="static/images/p5.gif" alt="" border="0" /></a></div>
-
-          <div class="prod_price"><span class="reduce">350$</span> <span class="price">270$</span></div>
-
-        </div>
-
-        <div class="bottom_prod_box"></div>
-
-        <div class="prod_details_tab"> <a href="http://all-free-download.com/free-website-templates/" title="header=[Add to cart] body=[&nbsp;] fade=[on]"><img src="static/images/cart.gif" alt="" border="0" class="left_bt" /></a> <a href="http://all-free-download.com/free-website-templates/" title="header=[Specials] body=[&nbsp;] fade=[on]"><img src="static/images/favs.gif" alt="" border="0" class="left_bt" /></a> <a href="http://all-free-download.com/free-website-templates/" title="header=[Gifts] body=[&nbsp;] fade=[on]"><img src="static/images/favorites.gif" alt="" border="0" class="left_bt" /></a> <a href="details.html" class="prod_details">details</a> </div>
-
-      </div>
+    </c:forEach>
 
     </div>
 
@@ -200,19 +167,23 @@
 
       </div>
 
-      <div class="title_box">What’s new</div>
+      <div class="title_box">What's new</div>
 
       <div class="border_box">
 
-        <div class="product_title"><a href="details.html">Motorola 156 MX-VL</a></div>
+        <div class="border_box">
+		<c:forEach items="${products[1]}" var="product" end="0">
+        	<div class="product_title"><a href="details.html">${product.name}</a></div>
 
-        <div class="product_img"><a href="details.html"><img src="static/images/p2.gif" alt="" border="0" /></a></div>
+    	    <div class="product_img"><a href="details.html"><img width="auto" height="94px" src="static/images/${product.catalogid}${product.id}.jpg" alt="" border="0" /></a></div>
 
-        <div class="prod_price"><span class="reduce">350$</span> <span class="price">270$</span></div>
+	        <div class="prod_price"><span class="reduce">$${product.unitPrice+product.unitPrice*0.2}</span> <span class="price">$${product.unitPrice}</span></div>
+		</c:forEach>
+      </div>
 
       </div>
 
-      <div class="banner_adds"> <a href="http://all-free-download.com/free-website-templates/"><img src="static/images/bann1.jpg" alt="" border="0" /></a> </div>
+      <div class="banner_adds"> <a href=""><img src="static/images/bann1.jpg" alt="" border="0" /></a> </div>
 
     </div>
 

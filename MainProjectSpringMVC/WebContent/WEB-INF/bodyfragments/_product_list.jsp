@@ -1,78 +1,43 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+<head>
+<link rel="stylesheet" type="text/css" href="static/style.css" />
+<script type="text/javascript" src="static/js/boxOver.js"></script>
+</head>
+
 <br/>
 <br/>
     <!-- Page Content -->
     <div class="container-fluid">
 
         <div class="row-fluid">
- 
 
             <div class="col-md-12">          
 
                 <div class="row">
 
 					<c:forEach items="${products}" var="product">
-					    <div class="col-sm-2 col-lg-2 col-md-2">
-	                        <div class="thumbnail">
-	                            <a href="product/${product.id}"><img src="static/images/${product.catalogid}${product.id}.jpg" alt=""></a>
-	                            <div class="caption">
-	                                <h4 class="pull-right">$${product.unitPrice}</h4>
-	                                <h5><a href="product/${product.id}">${product.name}</a>
-	                                </h5>
-	                            </div>
-	                            <div class="ratings">
-	                                <p class="pull-right">
-	                                	<span class="glyphicon glyphicon-hand-right"></span>
-	                                	<span>${product.review}</span>
-	                                </p>
-	                                <p>
-	                                	<c:set var = "rating" value="${product.rating}" />
-	                                	<c:if test="${rating eq 0}">
-	                                		<span class="glyphicon glyphicon-star-empty"></span>
-	                                		<span class="glyphicon glyphicon-star-empty"></span>
-	                                		<span class="glyphicon glyphicon-star-empty"></span>
-	                                		<span class="glyphicon glyphicon-star-empty"></span>
-	                                		<span class="glyphicon glyphicon-star-empty"></span>
-	                                	</c:if>
-	                                	<c:if test="${rating eq 1}">
-	                                		<span class="glyphicon glyphicon-star"></span>
-	                                		<span class="glyphicon glyphicon-star-empty"></span>
-	                                		<span class="glyphicon glyphicon-star-empty"></span>
-	                                		<span class="glyphicon glyphicon-star-empty"></span>
-	                                		<span class="glyphicon glyphicon-star-empty"></span>
-	                                	</c:if>
-	                                	<c:if test="${rating eq 2}">
-	                                		<span class="glyphicon glyphicon-star"></span>
-	                                		<span class="glyphicon glyphicon-star"></span>
-	                                		<span class="glyphicon glyphicon-star-empty"></span>
-	                                		<span class="glyphicon glyphicon-star-empty"></span>
-	                                		<span class="glyphicon glyphicon-star-empty"></span>
-	                                	</c:if>
-	                                	<c:if test="${rating eq 3}">
-	                                		<span class="glyphicon glyphicon-star"></span>
-	                                		<span class="glyphicon glyphicon-star"></span>
-	                                		<span class="glyphicon glyphicon-star"></span>
-	                                		<span class="glyphicon glyphicon-star-empty"></span>
-	                                		<span class="glyphicon glyphicon-star-empty"></span>
-	                                	</c:if>
-	                                	<c:if test="${rating eq 4}">
-	                                		<span class="glyphicon glyphicon-star"></span>
-	                                		<span class="glyphicon glyphicon-star"></span>
-	                                		<span class="glyphicon glyphicon-star"></span>
-	                                		<span class="glyphicon glyphicon-star"></span>
-	                                		<span class="glyphicon glyphicon-star-empty"></span>
-	                                	</c:if>
-	                                	<c:if test="${rating eq 5}">
-	                                		<span class="glyphicon glyphicon-star"></span>
-	                                		<span class="glyphicon glyphicon-star"></span>
-	                                		<span class="glyphicon glyphicon-star"></span>
-	                                		<span class="glyphicon glyphicon-star"></span>
-	                                		<span class="glyphicon glyphicon-star"></span>
-	                                	</c:if>
-	                                </p>
-	                            </div>
-	                        </div>
-	                    </div>						
+					    <div class="prod_box">
+
+        	<div class="top_prod_box"></div>
+
+	        <div class="center_prod_box">
+             
+	            <div class="product_img">
+	            	<a href="product/${product.id}"><img width="auto" height="94px" src="static/images/${product.catalogid}${product.id}.jpg" alt="" border="0"/></a>
+	            </div>
+	            <div class=product_title><a href="product/${product.id}">${product.name}</a></div>
+	            <div class="prod_price"><span class="price">$${product.unitPrice}</span></div>
+			
+        	</div>
+
+	        <div class="bottom_prod_box"></div>
+
+        <div class="prod_details_tab">
+         <a href="" title="header=[Specials] body=[&nbsp;] fade=[on]"><img src="static/images/favs.gif" alt="" border="0" class="left_bt" /></a> 
+         <a href="" title="header=[Gifts] body=[&nbsp;] fade=[on]"><img src="static/images/favorites.gif" alt="" border="0" class="left_bt" /></a> 
+         <a href="product/${product.id}" class="prod_details">details</a> </div>
+      </div>						
 					</c:forEach>                
                 </div>
 
