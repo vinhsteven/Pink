@@ -5,7 +5,7 @@ package business.usecasecontrol;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import business.BusinessConstants;
+import business.SessionCache;
 import business.DbClassLogin;
 import business.Login;
 import business.SessionCache;
@@ -36,8 +36,8 @@ public class LoginControl {
 		//initialization; alternative: createAddress, createCreditCard methods
 		//made to be static
 		SessionCache cache = SessionCache.getInstance();
-		cache.add(BusinessConstants.LOGGED_IN, Boolean.TRUE);
-		cache.add(BusinessConstants.CUSTOMER, customerSubsystem);
+		cache.add(SessionCache.LOGGED_IN, Boolean.TRUE);
+		cache.add(SessionCache.CUSTOMER, customerSubsystem);
         
         //finish initialization
         customerSubsystem.initializeCustomer(login.getCustId(), authorizationLevel);

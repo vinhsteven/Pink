@@ -12,7 +12,7 @@ import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import business.BusinessConstants;
+import business.SessionCache;
 import business.Login;
 
 /**
@@ -43,21 +43,21 @@ public class loginFilter implements Filter {
         HttpServletRequest req = (HttpServletRequest) request;
         HttpServletResponse resp = (HttpServletResponse) response;
 
-        Login login = (Login) req.getSession().getAttribute(BusinessConstants.LOGGED_IN);
+        Login login = (Login) req.getSession().getAttribute(SessionCache.LOGGED_IN);
         if((login == null || !login.isAdmin()) && 
         		req.getRequestURI().startsWith(req.getContextPath() + "/admin")){//no-administrator   
         	
-        	req.getSession().setAttribute(BusinessConstants.LAST_REQUEST_URL, req.getRequestURI());        	
+        	req.getSession().setAttribute(SessionCache.LAST_REQUEST_URL, req.getRequestURI());        	
         	resp.sendRedirect(req.getContextPath() + "/login");
         }
         else if(login == null && 
         		req.getRequestURI().startsWith(req.getContextPath() + "/my")){//no-login user
-        	req.getSession().setAttribute(BusinessConstants.LAST_REQUEST_URL, req.getRequestURI());
+        	req.getSession().setAttribute(SessionCache.LAST_REQUEST_URL, req.getRequestURI());
         	resp.sendRedirect(req.getContextPath() + "/login");
         }
         else{
         	if(!req.getRequestURI().startsWith(req.getContextPath() + "/login"))
-        		req.getSession().setAttribute(BusinessConstants.LAST_REQUEST_URL, null);//clear
+        		req.getSession().setAttribute(SessionCache.LAST_REQUEST_URL, null);//clear
             chain.doFilter(request, response);
         }
     }

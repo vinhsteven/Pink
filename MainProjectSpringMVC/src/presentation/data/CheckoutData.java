@@ -6,7 +6,6 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import business.BusinessConstants;
 import business.SessionCache;
 import business.customersubsystem.CustomerSubsystemFacade;
 import business.exceptions.BackendException;

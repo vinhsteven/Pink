@@ -5,7 +5,7 @@ import java.util.DoubleSummaryStatistics;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import business.BusinessConstants;
+import business.SessionCache;
 import business.SessionCache;
 import business.externalinterfaces.CartItem;
 import business.externalinterfaces.CustomerSubsystem;
@@ -18,11 +18,11 @@ public class DataUtil {
 	}
 	
 	public static boolean isLoggedIn() {
-		return (Boolean)SessionCache.getInstance().get(BusinessConstants.LOGGED_IN);
+		return (Boolean)SessionCache.getInstance().get(SessionCache.LOGGED_IN);
 	}
 	
 	public static CustomerSubsystem readCustFromCache() {
-		return (CustomerSubsystem)SessionCache.getInstance().get(BusinessConstants.CUSTOMER);
+		return (CustomerSubsystem)SessionCache.getInstance().get(SessionCache.CUSTOMER);
 	}
 	public static double computeTotal(List<CartItem> list) {
 		DoubleSummaryStatistics summary 

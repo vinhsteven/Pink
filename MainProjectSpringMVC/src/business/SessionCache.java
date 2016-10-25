@@ -9,7 +9,10 @@ import java.util.HashMap;
  *
  */
 public class SessionCache {
-    
+    public static final String CUSTOMER = "Customer";
+    public static final String LOGGED_IN = "LoggedIn";
+    public static final String LAST_REQUEST_URL = "LastRequestURL";
+    public static final String RESOURCES = "resources";
     //public interface
     public static SessionCache getInstance() {
         return instance;
@@ -36,6 +39,6 @@ public class SessionCache {
     private HashMap<Object,Object> context;
     private SessionCache(){
         context = new HashMap<Object,Object>();
-        context.put(BusinessConstants.LOGGED_IN, Boolean.FALSE);      
+        context.put(LOGGED_IN, Boolean.FALSE);      
     }
 }

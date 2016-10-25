@@ -7,7 +7,7 @@ import java.util.logging.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import business.BusinessConstants;
+import business.SessionCache;
 import business.SessionCache;
 import business.exceptions.BackendException;
 import business.exceptions.BusinessException;
@@ -17,6 +17,7 @@ import business.externalinterfaces.CreditCard;
 import business.externalinterfaces.CustomerProfile;
 import business.externalinterfaces.CustomerSubsystem;
 import business.externalinterfaces.ShoppingCartSubsystem;
+import presentation.util.CacheReader;
 
 @Component
 public class CheckoutController{
@@ -65,14 +66,12 @@ public class CheckoutController{
 	}
 		
 	public void runPaymentRules(Address addr, CreditCard cc) throws RuleException, BusinessException {
-		CustomerSubsystem cust = 
-				(CustomerSubsystem)SessionCache.getInstance().get(BusinessConstants.CUSTOMER);
+		CustomerSubsystem cust = CacheReader.readCustomer();
 		cust.runPaymentRules(addr, cc);
 	}
 	
 	public Address runAddressRules(Address addr) throws RuleException, BusinessException {
-		CustomerSubsystem cust = 
-			(CustomerSubsystem)SessionCache.getInstance().get(BusinessConstants.CUSTOMER);
+		CustomerSubsystem cust = CacheReader.readCustomer();
 		return cust.runAddressRules(addr);
 	}
 	
@@ -85,21 +84,18 @@ public class CheckoutController{
 	 *  Credit Verification System 
 	 */
 	public void verifyCreditCard() throws BusinessException {
-		CustomerSubsystem cust = 
-				(CustomerSubsystem)SessionCache.getInstance().get(BusinessConstants.CUSTOMER);			
+		CustomerSubsystem cust = CacheReader.readCustomer();
 		cust.checkCreditCard();
 	}
 	
 	public void saveNewAddress(Address addr) throws BackendException {
-		CustomerSubsystem cust = 
-			(CustomerSubsystem)SessionCache.getInstance().get(BusinessConstants.CUSTOMER);			
+		CustomerSubsystem cust = CacheReader.readCustomer();
 		cust.saveNewAddress(addr);
 	}
 	
 	/** Asks Customer Subsystem to submit final order */
 	public void submitFinalOrder() throws BackendException {
-		CustomerSubsystem cust = 
-				(CustomerSubsystem)SessionCache.getInstance().get(BusinessConstants.CUSTOMER);			
+		CustomerSubsystem cust = CacheReader.readCustomer();
 		cust.submitOrder();
 	}
 

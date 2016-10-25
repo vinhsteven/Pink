@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import business.BusinessConstants;
+import business.SessionCache;
 import business.Login;
 import business.SessionCache;
 import business.exceptions.BackendException;
@@ -49,9 +49,9 @@ public class LoginUIControl {
 
     		login.setLoggedIn(true);
     		login.setAdmin(authorizationLevel == 1);
-    		session.setAttribute(BusinessConstants.LOGGED_IN, login);
+    		session.setAttribute(SessionCache.LOGGED_IN, login);
     		
-    		String lastVisitedUrl = (String)session.getAttribute(BusinessConstants.LAST_REQUEST_URL);
+    		String lastVisitedUrl = (String)session.getAttribute(SessionCache.LAST_REQUEST_URL);
     		if(lastVisitedUrl != null && lastVisitedUrl.length() > 0){
     			try {
 					response.sendRedirect(lastVisitedUrl);
@@ -75,13 +75,13 @@ public class LoginUIControl {
     public String logout(HttpSession session) {
     	
     	SessionCache cache = SessionCache.getInstance();
-		boolean loggedIn = (Boolean)cache.get(BusinessConstants.LOGGED_IN);
+		boolean loggedIn = (Boolean)cache.get(SessionCache.LOGGED_IN);
 	
 		if(loggedIn) {
-			cache.add(BusinessConstants.LOGGED_IN, Boolean.FALSE);
-			cache.remove(BusinessConstants.CUSTOMER);
+			cache.add(SessionCache.LOGGED_IN, Boolean.FALSE);
+			cache.remove(SessionCache.CUSTOMER);
 			
-    		session.setAttribute(BusinessConstants.LOGGED_IN, null);
+    		session.setAttribute(SessionCache.LOGGED_IN, null);
 		}
 		
         return "redirect:/";

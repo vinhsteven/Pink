@@ -8,7 +8,6 @@ import java.util.logging.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import business.BusinessConstants;
 import business.SessionCache;
 import business.exceptions.BackendException;
 import business.externalinterfaces.CustomerSubsystem;
@@ -33,7 +32,7 @@ public class ViewOrdersData {
 	
 	public void refreshAfterSubmit() throws BackendException{
 		SessionCache cache = SessionCache.getInstance();
-		CustomerSubsystem  css = (CustomerSubsystem) cache.get(BusinessConstants.CUSTOMER);
+		CustomerSubsystem  css = (CustomerSubsystem) cache.get(SessionCache.CUSTOMER);
 		viewOrdersController.refreshAfterSubmit(css);
 	}
 	
@@ -46,7 +45,7 @@ public class ViewOrdersData {
 		 * Get the orders and change each order into orderPres.
 		 * */
 		SessionCache cache = SessionCache.getInstance();
-		CustomerSubsystem  css = (CustomerSubsystem) cache.get(BusinessConstants.CUSTOMER);
+		CustomerSubsystem  css = (CustomerSubsystem) cache.get(SessionCache.CUSTOMER);
 
 		List<Order> or_hist = new ArrayList<Order>();
 		
